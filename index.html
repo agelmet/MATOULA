@@ -24,12 +24,12 @@
                 extend: {
                     colors: {
                         minimal: {
-                            black: '#0f0f0f',
-                            dark: '#1c1c1c',
-                            gray: '#4a4a4a',
-                            silver: '#9e9e9e',
-                            light: '#ebebeb',
-                            soft: '#f8f8f8',
+                            black: '#1a1a1a', // Softer, breathable charcoal instead of harsh black
+                            dark: '#2d2d2d',
+                            gray: '#5a5a5a', // Lighter, friendlier gray
+                            silver: '#a0a0a0',
+                            light: '#eaeaea', // Super soft border color
+                            soft: '#fafafa', // Luminous off-white background
                             white: '#ffffff',
                         }
                     },
@@ -38,8 +38,8 @@
                         serif: ['Playfair Display', 'serif'],
                     },
                     boxShadow: {
-                        'glass': '0 4px 30px rgba(0, 0, 0, 0.03)',
-                        'soft': '0 20px 40px -15px rgba(0,0,0,0.05)',
+                        'glass': '0 4px 30px rgba(0, 0, 0, 0.02)',
+                        'soft': '0 20px 40px -15px rgba(0,0,0,0.03)',
                     },
                     animation: {
                         'kenburns': 'kenburns 20s ease-out both',
@@ -71,11 +71,11 @@
     </script>
 
     <style>
-        /* Smooth Minimalist Scrollbar */
+        /* Smooth Bright Scrollbar */
         ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #f8f8f8; }
-        ::-webkit-scrollbar-thumb { background: #e0e0e0; border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: #9e9e9e; }
+        ::-webkit-scrollbar-track { background: #fafafa; }
+        ::-webkit-scrollbar-thumb { background: #eaeaea; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #a0a0a0; }
 
         /* Reveal Animations */
         .reveal { opacity: 0; transform: translateY(40px); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
@@ -85,7 +85,7 @@
         
         /* Glassmorphism Classes */
         .glass-panel {
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 1);
@@ -103,7 +103,7 @@
         /* Lightbox styling */
         #lightbox {
             opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
-            backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
         }
         #lightbox.active { opacity: 1; pointer-events: auto; }
         #lightbox img { transform: scale(0.95); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
@@ -111,12 +111,12 @@
 
         /* Editorial List Hover Effect */
         .editorial-item { transition: all 0.4s ease; }
-        .editorial-item:hover { padding-left: 1.5rem; background-color: #f8f8f8; }
+        .editorial-item:hover { padding-left: 1.5rem; background-color: #fafafa; }
     </style>
 
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="bg-minimal-soft text-minimal-black font-sans antialiased overflow-x-hidden selection:bg-minimal-black selection:text-white">
+<body class="bg-minimal-soft text-minimal-black font-sans antialiased overflow-x-hidden selection:bg-minimal-light selection:text-minimal-black">
 
     <nav class="fixed w-full z-50 transition-all duration-500 py-6" id="navbar">
         <div class="max-w-7xl mx-auto px-6">
@@ -156,33 +156,33 @@
 
         <div class="absolute inset-0 z-0">
             <div class="w-full h-full bg-cover bg-center animate-kenburns" style="background-image: url('https://github.com/agelmet/MATOULA/blob/main/2026-02-25.jpg?raw=true');"></div>
-            <div class="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent backdrop-blur-[2px]"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent backdrop-blur-[2px]"></div>
         </div>
 
         <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-16 items-center relative z-20 pl-0 md:pl-10">
             
             <div class="reveal">
-                <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-minimal-light bg-white/60 backdrop-blur-md text-minimal-gray text-xs tracking-[0.2em] font-semibold mb-8 uppercase">
+                <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-minimal-light bg-white/80 backdrop-blur-md text-minimal-gray text-xs tracking-[0.2em] font-semibold mb-8 uppercase">
                     <span class="w-1.5 h-1.5 rounded-full bg-minimal-black animate-pulse"></span>
                     ΚΛΙΝΙΚΗ ΨΥΧΟΛΟΓΟΣ & ΨΥΧΟΘΕΡΑΠΕΥΤΡΙΑ
                 </div>
                 
-                <h1 class="text-5xl md:text-7xl lg:text-[5.5rem] font-serif text-minimal-black leading-[1.05] mb-6 tracking-tight">
+                <h1 class="text-5xl md:text-7xl lg:text-[5.5rem] font-serif text-minimal-black leading-[1.05] mb-2 tracking-tight">
                     Ψυχοδυναμική <span class="block text-minimal-silver italic font-light">Ψυχοθεραπεία</span>
                 </h1>
                 
-                <p class="text-xl md:text-2xl font-serif text-minimal-gray italic mb-8 max-w-lg">
-                    Ένας Ασφαλής Χώρος για Κάθε Ταυτότητα.
+                <p class="text-lg md:text-xl font-serif text-minimal-gray italic mt-10 mb-10 max-w-lg font-light leading-relaxed">
+                    Η Αλλαγή Αρχίζει Εκεί Που Συναντάμε τον Αληθινό μας Εαυτό.
                 </p>
                 
                 <div class="flex items-center gap-4 mb-10 text-minimal-gray">
-                    <span class="text-xs font-bold tracking-[0.15em] uppercase">ΕΜΠΕΙΡΙΑ ΑΠΟ ΤΟ 2010</span>
+                    <span class="text-[10px] font-bold tracking-[0.2em] uppercase">ΕΜΠΕΙΡΙΑ ΑΠΟ ΤΟ 2010</span>
                     <div class="w-1 h-1 rounded-full bg-minimal-silver"></div>
-                    <span class="text-xs font-bold tracking-[0.15em] uppercase">ΕΞΑΡΧΕΙΑ & ONLINE</span>
+                    <span class="text-[10px] font-bold tracking-[0.2em] uppercase">ΕΞΑΡΧΕΙΑ & ONLINE</span>
                 </div>
 
                 <div class="flex flex-wrap items-center gap-5">
-                    <a href="#contact" class="px-9 py-4 bg-minimal-black text-white rounded-full font-bold text-sm tracking-wider hover:bg-minimal-gray hover:shadow-lg transition-all duration-300 flex items-center gap-3 group uppercase">
+                    <a href="#contact" class="px-9 py-4 bg-minimal-black text-white rounded-full font-bold text-sm tracking-widest hover:bg-minimal-gray hover:shadow-lg transition-all duration-300 flex items-center gap-3 group uppercase">
                         ΚΛΕΙΣΤΕ ΣΥΝΕΔΡΙΑ
                         <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
                     </a>
@@ -190,12 +190,12 @@
             </div>
 
             <div class="relative w-full max-w-[480px] ml-auto reveal reveal-delay-2 hidden lg:block h-[650px]">
-                <div class="absolute inset-0 rounded-t-[250px] rounded-b-[250px] overflow-hidden shadow-2xl border-8 border-white hover:scale-[1.02] transition-transform duration-1000 ease-out z-10">
+                <div class="absolute inset-0 rounded-t-[250px] rounded-b-[250px] overflow-hidden shadow-[0_20px_50px_-15px_rgba(0,0,0,0.1)] border-8 border-white hover:scale-[1.02] transition-transform duration-1000 ease-out z-10">
                     <img src="https://github.com/agelmet/MATOULA/blob/main/2026-02-25-9.jpg?raw=true" alt="Μαρία Ματούλα" class="w-full h-full object-cover object-center">
                 </div>
 
-                <div class="absolute bottom-20 -left-16 z-30 glass-panel p-5 rounded-3xl shadow-soft flex items-center gap-4 animate-float border border-minimal-light">
-                    <div class="w-12 h-12 rounded-full bg-minimal-black flex items-center justify-center text-white shadow-md">
+                <div class="absolute bottom-20 -left-16 z-30 glass-panel bg-white/90 p-5 rounded-3xl shadow-soft flex items-center gap-4 animate-float border border-minimal-light">
+                    <div class="w-12 h-12 rounded-full bg-minimal-soft border border-minimal-light flex items-center justify-center text-minimal-black shadow-sm">
                         <i data-lucide="globe" class="w-5 h-5"></i>
                     </div>
                     <div>
@@ -222,13 +222,13 @@
                     <span class="text-minimal-silver font-bold tracking-[0.2em] text-xs uppercase block mb-4">ΘΕΜΕΛΙΑ ΕΜΠΙΣΤΟΣΥΝΗΣ</span>
                     <h2 class="text-4xl md:text-5xl font-serif text-minimal-black leading-tight mb-6">Το Θεραπευτικό Πλαίσιο.</h2>
                     <p class="text-minimal-gray font-light leading-relaxed">
-                        Βασισμένη σε στέρεα ακαδημαϊκά θεμέλια και πολυετή κλινική εμπειρία, η πρακτική διαμορφώνει έναν χώρο απόλυτης αποδοχής.
+                        Βασισμένη σε στέρεα ακαδημαϊκά θεμέλια και πολυετή κλινική εμπειρία, η πρακτική διαμορφώνει έναν χώρο απόλυτης αποδοχής και εξέλιξης.
                     </p>
                 </div>
 
                 <div class="lg:col-span-2 grid sm:grid-cols-2 gap-x-10 gap-y-12">
                     
-                    <div class="reveal reveal-delay-1 border-t border-minimal-black pt-6">
+                    <div class="reveal reveal-delay-1 border-t border-minimal-light pt-6">
                         <div class="flex items-center gap-3 mb-4">
                             <span class="text-xs font-bold text-minimal-silver">01 /</span>
                             <h4 class="text-lg font-serif font-bold text-minimal-black">Κλινική Εξειδίκευση (Ιταλία)</h4>
@@ -238,7 +238,7 @@
                         </p>
                     </div>
 
-                    <div class="reveal reveal-delay-2 border-t border-minimal-black pt-6">
+                    <div class="reveal reveal-delay-2 border-t border-minimal-light pt-6">
                         <div class="flex items-center gap-3 mb-4">
                             <span class="text-xs font-bold text-minimal-silver">02 /</span>
                             <h4 class="text-lg font-serif font-bold text-minimal-black">Αναλυτική Ομαδική Βάση</h4>
@@ -248,7 +248,7 @@
                         </p>
                     </div>
 
-                    <div class="reveal reveal-delay-1 border-t border-minimal-black pt-6">
+                    <div class="reveal reveal-delay-1 border-t border-minimal-light pt-6">
                         <div class="flex items-center gap-3 mb-4">
                             <span class="text-xs font-bold text-minimal-silver">03 /</span>
                             <h4 class="text-lg font-serif font-bold text-minimal-black">Αδιαπραγμάτευτη Συμπερίληψη</h4>
@@ -258,7 +258,7 @@
                         </p>
                     </div>
 
-                    <div class="reveal reveal-delay-2 border-t border-minimal-black pt-6">
+                    <div class="reveal reveal-delay-2 border-t border-minimal-light pt-6">
                         <div class="flex items-center gap-3 mb-4">
                             <span class="text-xs font-bold text-minimal-silver">04 /</span>
                             <h4 class="text-lg font-serif font-bold text-minimal-black">Πολυετής Εμπειρία</h4>
@@ -277,10 +277,10 @@
         <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-16 items-center">
             
             <div class="lg:col-span-5 relative reveal order-2 lg:order-1 mt-12 lg:mt-0">
-                <div class="aspect-[4/5] rounded-xl overflow-hidden shadow-soft img-zoom relative z-10">
+                <div class="aspect-[4/5] rounded-xl overflow-hidden shadow-soft img-zoom relative z-10 border border-minimal-light">
                     <img src="https://github.com/agelmet/MATOULA/blob/main/2026-02-26.jpg?raw=true" alt="Μαρία Ματούλα Ψυχοθεραπεύτρια" class="w-full h-full object-cover">
                 </div>
-                <div class="absolute -bottom-6 -left-6 w-full h-full border border-minimal-light bg-white rounded-xl z-0 transform -rotate-3"></div>
+                <div class="absolute -bottom-6 -left-6 w-full h-full border border-minimal-light bg-white rounded-xl z-0 transform -rotate-3 shadow-sm"></div>
             </div>
 
             <div class="lg:col-span-7 reveal reveal-delay-1 order-1 lg:order-2">
@@ -293,7 +293,7 @@
                     <p>
                         Η θεραπευτική της πρακτική βασίζεται στην <strong>Ψυχοδυναμική και Αναλυτική προσέγγιση</strong>. Έχει εκπαιδευτεί εκτενώς στην Ατομική, Ομαδική, καθώς και στη Θεραπεία Οικογένειας και Ζεύγους, από την έγκριτη Ελληνική Εταιρεία Αναλυτικής Ομαδικής & Οικογενειακής Ψυχοθεραπείας (ΕΕΑΟ&ΟΨ).
                     </p>
-                    <blockquote class="border-l-[3px] border-minimal-black pl-8 py-2 my-10 text-2xl font-serif text-minimal-black italic bg-transparent">
+                    <blockquote class="border-l-[3px] border-minimal-silver pl-8 py-2 my-10 text-2xl font-serif text-minimal-black italic bg-transparent">
                         "Παρέχουμε έναν απόλυτα ασφαλή και επιβεβαιωτικό χώρο (affirmative therapy)."
                     </blockquote>
                     <p>
@@ -304,14 +304,14 @@
         </div>
     </section>
 
-    <section id="services" class="py-32 px-6 bg-white relative">
+    <section id="services" class="py-32 px-6 bg-white relative border-y border-minimal-light/50">
         <div class="max-w-5xl mx-auto">
             <div class="text-center mb-24 reveal">
                 <span class="text-minimal-silver font-bold tracking-[0.2em] text-xs uppercase block mb-4">ΥΠΗΡΕΣΙΕΣ & ΕΞΕΙΔΙΚΕΥΣΕΙΣ</span>
                 <h2 class="text-4xl md:text-5xl font-serif text-minimal-black">Πώς Μπορούμε να Βοηθήσουμε</h2>
             </div>
 
-            <div class="flex flex-col border-t border-minimal-black">
+            <div class="flex flex-col border-t border-minimal-light">
                 
                 <div class="editorial-item py-12 border-b border-minimal-light reveal group flex flex-col md:flex-row gap-8 items-start">
                     <div class="text-3xl font-serif text-minimal-silver w-16 shrink-0 pt-1">01</div>
@@ -321,9 +321,9 @@
                             Δεν αναζητούμε απλώς την "καταστολή" του συμπτώματος, αλλά την κατανόηση της ρίζας του. Μέσα από την ελεύθερη έκφραση, διερευνούμε τα ασυνείδητα μοτίβα και τα τραύματα του παρελθόντος που πυροδοτούν το άγχος, τις κρίσεις πανικού, τον θυμό και τα ψυχοσωματικά συμπτώματα.
                         </p>
                         <div class="flex flex-wrap gap-3">
-                            <span class="text-[10px] font-bold tracking-widest text-minimal-silver border border-minimal-silver px-3 py-1 rounded-full uppercase">ΣΥΝΕΔΡΙΑ 50'</span>
-                            <span class="text-[10px] font-bold tracking-widest text-minimal-silver border border-minimal-silver px-3 py-1 rounded-full uppercase">ΑΓΧΟΣ & ΣΤΡΕΣ</span>
-                            <span class="text-[10px] font-bold tracking-widest text-minimal-silver border border-minimal-silver px-3 py-1 rounded-full uppercase">ΤΡΑΥΜΑ</span>
+                            <span class="text-[10px] font-bold tracking-widest text-minimal-gray bg-white border border-minimal-light px-3 py-1 rounded-full uppercase shadow-sm">ΣΥΝΕΔΡΙΑ 50'</span>
+                            <span class="text-[10px] font-bold tracking-widest text-minimal-gray bg-white border border-minimal-light px-3 py-1 rounded-full uppercase shadow-sm">ΑΓΧΟΣ & ΣΤΡΕΣ</span>
+                            <span class="text-[10px] font-bold tracking-widest text-minimal-gray bg-white border border-minimal-light px-3 py-1 rounded-full uppercase shadow-sm">ΤΡΑΥΜΑ</span>
                         </div>
                     </div>
                 </div>
@@ -336,8 +336,8 @@
                             Το γραφείο στα Εξάρχεια αποτελεί ένα σταθερό safe space. Εργαζόμαστε πάνω στην ενδυνάμωση των ΛΟΑΤΚΙ+ ατόμων, την υποστήριξη σε μεταβάσεις ταυτότητας φύλου και τη διαχείριση θεμάτων σεξουαλικού προσανατολισμού, εντελώς απαλλαγμένα από προκαταλήψεις.
                         </p>
                         <div class="flex flex-wrap gap-3">
-                            <span class="text-[10px] font-bold tracking-widest text-minimal-silver border border-minimal-silver px-3 py-1 rounded-full uppercase">SAFE SPACE</span>
-                            <span class="text-[10px] font-bold tracking-widest text-minimal-silver border border-minimal-silver px-3 py-1 rounded-full uppercase">ΤΑΥΤΟΤΗΤΑ ΦΥΛΟΥ</span>
+                            <span class="text-[10px] font-bold tracking-widest text-minimal-gray bg-white border border-minimal-light px-3 py-1 rounded-full uppercase shadow-sm">SAFE SPACE</span>
+                            <span class="text-[10px] font-bold tracking-widest text-minimal-gray bg-white border border-minimal-light px-3 py-1 rounded-full uppercase shadow-sm">ΤΑΥΤΟΤΗΤΑ ΦΥΛΟΥ</span>
                         </div>
                     </div>
                 </div>
@@ -350,8 +350,8 @@
                             Χρησιμοποιούμε τα εργαλεία της αναλυτικής και συστημικής σκέψης για να γεφυρώσουμε το χάσμα επικοινωνίας μεταξύ των συντρόφων (συνεδρίες 90'). Παράλληλα, παρέχεται εξειδικευμένος χώρος για εφήβους, βοηθώντας τους στις αλλαγές και τις προκλήσεις της ενηλικίωσης.
                         </p>
                         <div class="flex flex-wrap gap-3">
-                            <span class="text-[10px] font-bold tracking-widest text-minimal-silver border border-minimal-silver px-3 py-1 rounded-full uppercase">ΖΕΥΓΟΣ 90'</span>
-                            <span class="text-[10px] font-bold tracking-widest text-minimal-silver border border-minimal-silver px-3 py-1 rounded-full uppercase">ΕΦΗΒΟΙ 50'</span>
+                            <span class="text-[10px] font-bold tracking-widest text-minimal-gray bg-white border border-minimal-light px-3 py-1 rounded-full uppercase shadow-sm">ΖΕΥΓΟΣ 90'</span>
+                            <span class="text-[10px] font-bold tracking-widest text-minimal-gray bg-white border border-minimal-light px-3 py-1 rounded-full uppercase shadow-sm">ΕΦΗΒΟΙ 50'</span>
                         </div>
                     </div>
                 </div>
@@ -364,8 +364,8 @@
                             Η θεραπευτική συμμαχία δεν γνωρίζει γεωγραφικά σύνορα. Παρέχεται η δυνατότητα διαδικτυακών συνεδριών τόσο στα Ελληνικά όσο και στα Ιταλικά (Consulenze Psicologiche e Psicoterapia online in Italiano). Ιδανικό για expats.
                         </p>
                         <div class="flex flex-wrap gap-3">
-                            <span class="text-[10px] font-bold tracking-widest text-minimal-silver border border-minimal-silver px-3 py-1 rounded-full uppercase">ΒΙΝΤΕΟΚΛΗΣΗ</span>
-                            <span class="text-[10px] font-bold tracking-widest text-minimal-silver border border-minimal-silver px-3 py-1 rounded-full uppercase">IN ITALIANO</span>
+                            <span class="text-[10px] font-bold tracking-widest text-minimal-gray bg-white border border-minimal-light px-3 py-1 rounded-full uppercase shadow-sm">ΒΙΝΤΕΟΚΛΗΣΗ</span>
+                            <span class="text-[10px] font-bold tracking-widest text-minimal-gray bg-white border border-minimal-light px-3 py-1 rounded-full uppercase shadow-sm">IN ITALIANO</span>
                         </div>
                     </div>
                 </div>
@@ -385,37 +385,37 @@
             </div>
 
             <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
-                <button class="w-full break-inside-avoid overflow-hidden group relative reveal" onclick="openLightbox('https://github.com/agelmet/MATOULA/blob/main/2026-02-25-2.jpg?raw=true')">
+                <button class="w-full break-inside-avoid overflow-hidden group relative reveal rounded-lg shadow-sm" onclick="openLightbox('https://github.com/agelmet/MATOULA/blob/main/2026-02-25-2.jpg?raw=true')">
                     <img src="https://github.com/agelmet/MATOULA/blob/main/2026-02-25-2.jpg?raw=true" alt="Χώρος 1" class="w-full h-auto transform group-hover:scale-[1.03] transition-transform duration-700">
-                    <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[1px]"></div>
                 </button>
-                <button class="w-full break-inside-avoid overflow-hidden group relative reveal reveal-delay-1" onclick="openLightbox('https://github.com/agelmet/MATOULA/blob/main/2026-02-25-3.jpg?raw=true')">
+                <button class="w-full break-inside-avoid overflow-hidden group relative reveal reveal-delay-1 rounded-lg shadow-sm" onclick="openLightbox('https://github.com/agelmet/MATOULA/blob/main/2026-02-25-3.jpg?raw=true')">
                     <img src="https://github.com/agelmet/MATOULA/blob/main/2026-02-25-3.jpg?raw=true" alt="Χώρος 2" class="w-full h-auto transform group-hover:scale-[1.03] transition-transform duration-700">
-                    <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[1px]"></div>
                 </button>
-                <button class="w-full break-inside-avoid overflow-hidden group relative reveal reveal-delay-2" onclick="openLightbox('https://github.com/agelmet/MATOULA/blob/main/2026-02-25-4.jpg?raw=true')">
+                <button class="w-full break-inside-avoid overflow-hidden group relative reveal reveal-delay-2 rounded-lg shadow-sm" onclick="openLightbox('https://github.com/agelmet/MATOULA/blob/main/2026-02-25-4.jpg?raw=true')">
                     <img src="https://github.com/agelmet/MATOULA/blob/main/2026-02-25-4.jpg?raw=true" alt="Χώρος 3" class="w-full h-auto transform group-hover:scale-[1.03] transition-transform duration-700">
-                    <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[1px]"></div>
                 </button>
-                <button class="w-full break-inside-avoid overflow-hidden group relative reveal" onclick="openLightbox('https://github.com/agelmet/MATOULA/blob/main/2026-02-25-5.jpg?raw=true')">
+                <button class="w-full break-inside-avoid overflow-hidden group relative reveal rounded-lg shadow-sm" onclick="openLightbox('https://github.com/agelmet/MATOULA/blob/main/2026-02-25-5.jpg?raw=true')">
                     <img src="https://github.com/agelmet/MATOULA/blob/main/2026-02-25-5.jpg?raw=true" alt="Χώρος 4" class="w-full h-auto transform group-hover:scale-[1.03] transition-transform duration-700">
-                    <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[1px]"></div>
                 </button>
-                <button class="w-full break-inside-avoid overflow-hidden group relative reveal reveal-delay-1" onclick="openLightbox('https://github.com/agelmet/MATOULA/blob/main/2026-02-25-6.jpg?raw=true')">
+                <button class="w-full break-inside-avoid overflow-hidden group relative reveal reveal-delay-1 rounded-lg shadow-sm" onclick="openLightbox('https://github.com/agelmet/MATOULA/blob/main/2026-02-25-6.jpg?raw=true')">
                     <img src="https://github.com/agelmet/MATOULA/blob/main/2026-02-25-6.jpg?raw=true" alt="Χώρος 5" class="w-full h-auto transform group-hover:scale-[1.03] transition-transform duration-700">
-                    <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[1px]"></div>
                 </button>
-                <button class="w-full break-inside-avoid overflow-hidden group relative reveal reveal-delay-2" onclick="openLightbox('https://github.com/agelmet/MATOULA/blob/main/2026-02-25-7.jpg?raw=true')">
+                <button class="w-full break-inside-avoid overflow-hidden group relative reveal reveal-delay-2 rounded-lg shadow-sm" onclick="openLightbox('https://github.com/agelmet/MATOULA/blob/main/2026-02-25-7.jpg?raw=true')">
                     <img src="https://github.com/agelmet/MATOULA/blob/main/2026-02-25-7.jpg?raw=true" alt="Χώρος 6" class="w-full h-auto transform group-hover:scale-[1.03] transition-transform duration-700">
-                    <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[1px]"></div>
                 </button>
-                <button class="w-full break-inside-avoid overflow-hidden group relative reveal" onclick="openLightbox('https://github.com/agelmet/MATOULA/blob/main/2026-02-25-8.jpg?raw=true')">
+                <button class="w-full break-inside-avoid overflow-hidden group relative reveal rounded-lg shadow-sm" onclick="openLightbox('https://github.com/agelmet/MATOULA/blob/main/2026-02-25-8.jpg?raw=true')">
                     <img src="https://github.com/agelmet/MATOULA/blob/main/2026-02-25-8.jpg?raw=true" alt="Χώρος 7" class="w-full h-auto transform group-hover:scale-[1.03] transition-transform duration-700">
-                    <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[1px]"></div>
                 </button>
-                <button class="w-full break-inside-avoid overflow-hidden group relative reveal reveal-delay-1" onclick="openLightbox('https://github.com/agelmet/MATOULA/blob/main/2026-02-25.jpg?raw=true')">
+                <button class="w-full break-inside-avoid overflow-hidden group relative reveal reveal-delay-1 rounded-lg shadow-sm" onclick="openLightbox('https://github.com/agelmet/MATOULA/blob/main/2026-02-25.jpg?raw=true')">
                     <img src="https://github.com/agelmet/MATOULA/blob/main/2026-02-25.jpg?raw=true" alt="Χώρος 8" class="w-full h-auto transform group-hover:scale-[1.03] transition-transform duration-700">
-                    <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[1px]"></div>
                 </button>
             </div>
         </div>
@@ -428,11 +428,11 @@
         <img id="lightbox-img" src="" alt="Εικόνα Χώρου" class="max-w-[90vw] max-h-[90vh] object-contain shadow-2xl cursor-default" onclick="event.stopPropagation()">
     </div>
 
-    <section id="reviews" class="py-24 bg-white overflow-hidden border-t border-b border-minimal-light/50">
+    <section id="reviews" class="py-24 bg-white overflow-hidden border-t border-b border-minimal-light">
         <div class="max-w-7xl mx-auto px-6 mb-16 text-center reveal">
             <span class="text-minimal-silver font-bold tracking-[0.2em] text-xs uppercase block mb-4">ΕΜΠΕΙΡΙΕΣ ΘΕΡΑΠΕΥΟΜΕΝΩΝ</span>
             <h2 class="text-4xl font-serif text-minimal-black mb-6">Η Εμπιστοσύνη σας</h2>
-            <img src="https://www.doctoranytime.gr/images/logo-rebranding.svg" alt="Doctoranytime" class="h-5 mx-auto opacity-60 grayscale hover:grayscale-0 transition-all duration-300">
+            <img src="https://www.doctoranytime.gr/images/logo-rebranding.svg" alt="Doctoranytime" class="h-5 mx-auto opacity-50 grayscale hover:grayscale-0 transition-all duration-300">
         </div>
 
         <div class="w-full overflow-hidden relative pb-4">
@@ -442,7 +442,7 @@
             <div class="marquee-container animate-marquee">
                 <div class="flex space-x-6 px-3 items-stretch">
                     
-                    <div class="w-80 bg-white p-8 border border-minimal-light flex flex-col shrink-0">
+                    <div class="w-80 bg-minimal-soft p-8 border border-minimal-light rounded-xl flex flex-col shrink-0 shadow-sm">
                         <div class="flex justify-between items-start mb-6">
                             <div class="flex items-center gap-1 text-minimal-black">
                                 <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
@@ -456,7 +456,7 @@
                         </div>
                     </div>
 
-                    <div class="w-80 bg-white p-8 border border-minimal-light flex flex-col shrink-0">
+                    <div class="w-80 bg-minimal-soft p-8 border border-minimal-light rounded-xl flex flex-col shrink-0 shadow-sm">
                         <div class="flex justify-between items-start mb-6">
                             <div class="flex items-center gap-1 text-minimal-black">
                                 <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
@@ -470,7 +470,7 @@
                         </div>
                     </div>
 
-                    <div class="w-80 bg-white p-8 border border-minimal-light flex flex-col shrink-0">
+                    <div class="w-80 bg-minimal-soft p-8 border border-minimal-light rounded-xl flex flex-col shrink-0 shadow-sm">
                         <div class="flex justify-between items-start mb-6">
                             <div class="flex items-center gap-1 text-minimal-black">
                                 <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
@@ -484,7 +484,7 @@
                         </div>
                     </div>
 
-                    <div class="w-80 bg-white p-8 border border-minimal-light flex flex-col shrink-0">
+                    <div class="w-80 bg-minimal-soft p-8 border border-minimal-light rounded-xl flex flex-col shrink-0 shadow-sm">
                         <div class="flex justify-between items-start mb-6">
                             <div class="flex items-center gap-1 text-minimal-black">
                                 <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
@@ -498,7 +498,7 @@
                         </div>
                     </div>
 
-                    <div class="w-80 bg-white p-8 border border-minimal-light flex flex-col shrink-0">
+                    <div class="w-80 bg-minimal-soft p-8 border border-minimal-light rounded-xl flex flex-col shrink-0 shadow-sm">
                         <div class="flex justify-between items-start mb-6">
                             <div class="flex items-center gap-1 text-minimal-black">
                                 <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
@@ -512,7 +512,7 @@
                         </div>
                     </div>
 
-                    <div class="w-80 bg-white p-8 border border-minimal-light flex flex-col shrink-0">
+                    <div class="w-80 bg-minimal-soft p-8 border border-minimal-light rounded-xl flex flex-col shrink-0 shadow-sm">
                         <div class="flex justify-between items-start mb-6">
                             <div class="flex items-center gap-1 text-minimal-black">
                                 <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
@@ -526,7 +526,7 @@
                         </div>
                     </div>
 
-                    <div class="w-80 bg-white p-8 border border-minimal-light flex flex-col shrink-0">
+                    <div class="w-80 bg-minimal-soft p-8 border border-minimal-light rounded-xl flex flex-col shrink-0 shadow-sm">
                         <div class="flex justify-between items-start mb-6">
                             <div class="flex items-center gap-1 text-minimal-black">
                                 <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
@@ -542,7 +542,7 @@
                 </div>
 
                 <div class="flex space-x-6 px-3 items-stretch" aria-hidden="true">
-                    <div class="w-80 bg-white p-8 border border-minimal-light flex flex-col shrink-0">
+                    <div class="w-80 bg-minimal-soft p-8 border border-minimal-light rounded-xl flex flex-col shrink-0 shadow-sm">
                         <div class="flex justify-between items-start mb-6">
                             <div class="flex items-center gap-1 text-minimal-black">
                                 <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
@@ -556,7 +556,7 @@
                         </div>
                     </div>
 
-                    <div class="w-80 bg-white p-8 border border-minimal-light flex flex-col shrink-0">
+                    <div class="w-80 bg-minimal-soft p-8 border border-minimal-light rounded-xl flex flex-col shrink-0 shadow-sm">
                         <div class="flex justify-between items-start mb-6">
                             <div class="flex items-center gap-1 text-minimal-black">
                                 <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
@@ -570,7 +570,7 @@
                         </div>
                     </div>
 
-                    <div class="w-80 bg-white p-8 border border-minimal-light flex flex-col shrink-0">
+                    <div class="w-80 bg-minimal-soft p-8 border border-minimal-light rounded-xl flex flex-col shrink-0 shadow-sm">
                         <div class="flex justify-between items-start mb-6">
                             <div class="flex items-center gap-1 text-minimal-black">
                                 <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
@@ -584,7 +584,7 @@
                         </div>
                     </div>
 
-                    <div class="w-80 bg-white p-8 border border-minimal-light flex flex-col shrink-0">
+                    <div class="w-80 bg-minimal-soft p-8 border border-minimal-light rounded-xl flex flex-col shrink-0 shadow-sm">
                         <div class="flex justify-between items-start mb-6">
                             <div class="flex items-center gap-1 text-minimal-black">
                                 <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
@@ -598,7 +598,7 @@
                         </div>
                     </div>
 
-                    <div class="w-80 bg-white p-8 border border-minimal-light flex flex-col shrink-0">
+                    <div class="w-80 bg-minimal-soft p-8 border border-minimal-light rounded-xl flex flex-col shrink-0 shadow-sm">
                         <div class="flex justify-between items-start mb-6">
                             <div class="flex items-center gap-1 text-minimal-black">
                                 <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
@@ -612,7 +612,7 @@
                         </div>
                     </div>
 
-                    <div class="w-80 bg-white p-8 border border-minimal-light flex flex-col shrink-0">
+                    <div class="w-80 bg-minimal-soft p-8 border border-minimal-light rounded-xl flex flex-col shrink-0 shadow-sm">
                         <div class="flex justify-between items-start mb-6">
                             <div class="flex items-center gap-1 text-minimal-black">
                                 <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
@@ -626,7 +626,7 @@
                         </div>
                     </div>
 
-                    <div class="w-80 bg-white p-8 border border-minimal-light flex flex-col shrink-0">
+                    <div class="w-80 bg-minimal-soft p-8 border border-minimal-light rounded-xl flex flex-col shrink-0 shadow-sm">
                         <div class="flex justify-between items-start mb-6">
                             <div class="flex items-center gap-1 text-minimal-black">
                                 <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
@@ -643,31 +643,31 @@
             </div>
             
             <div class="text-center mt-12">
-                <a href="https://www.doctoranytime.gr/d/Psychologos/matoula-maria" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-8 py-3 bg-white border border-minimal-light text-xs font-bold text-minimal-black hover:bg-minimal-soft transition-all uppercase tracking-wider">
-                    ΠΕΡΙΣΣΟΤΕΡΑ ΣΤΟ <img src="https://www.doctoranytime.gr/images/logo-rebranding.svg" class="h-4 ml-1 opacity-70 grayscale" alt="DA">
+                <a href="https://www.doctoranytime.gr/d/Psychologos/matoula-maria" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-8 py-3 bg-white border border-minimal-light text-xs font-bold text-minimal-black rounded-full shadow-sm hover:bg-minimal-soft transition-all uppercase tracking-wider">
+                    ΠΕΡΙΣΣΟΤΕΡΑ ΣΤΟ <img src="https://www.doctoranytime.gr/images/logo-rebranding.svg" class="h-4 ml-1 opacity-60 grayscale" alt="DA">
                 </a>
             </div>
         </div>
     </section>
 
-    <footer id="contact" class="bg-minimal-black text-white pt-24 pb-10">
+    <footer id="contact" class="bg-minimal-soft text-minimal-black pt-24 pb-10 border-t border-minimal-light">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20 border-b border-white/10 pb-16">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20 border-b border-minimal-light pb-16">
                 
                 <div class="lg:col-span-2 reveal">
-                    <h3 class="text-3xl font-serif text-white mb-6">Μαρία Ματούλα</h3>
-                    <p class="text-minimal-silver max-w-sm mb-10 font-light leading-relaxed">
+                    <h3 class="text-3xl font-serif text-minimal-black mb-6">Μαρία Ματούλα</h3>
+                    <p class="text-minimal-gray max-w-sm mb-10 font-light leading-relaxed">
                         Η επούλωση ξεκινά με ένα βήμα. Επικοινωνήστε μαζί μας για να ορίσουμε την πρώτη σας συνεδρία σε ένα περιβάλλον απόλυτης αποδοχής.
                     </p>
-                    <a href="https://www.doctoranytime.gr/d/Psychologos/matoula-maria" target="_blank" class="inline-flex items-center justify-center bg-white text-minimal-black px-8 py-4 text-xs font-bold hover:bg-minimal-silver hover:text-white transition-colors duration-300 uppercase tracking-widest">
-                        <img src="https://www.doctoranytime.gr/images/logo-rebranding.svg" alt="Doctoranytime" class="h-4 mr-3 grayscale opacity-80 mix-blend-multiply">
+                    <a href="https://www.doctoranytime.gr/d/Psychologos/matoula-maria" target="_blank" class="inline-flex items-center justify-center bg-minimal-black text-white px-8 py-4 text-xs font-bold rounded-full hover:bg-minimal-gray hover:shadow-lg transition-all duration-300 uppercase tracking-widest">
+                        <img src="https://www.doctoranytime.gr/images/logo-rebranding.svg" alt="Doctoranytime" class="h-4 mr-3 grayscale brightness-200">
                         ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ
                     </a>
                 </div>
 
                 <div class="reveal reveal-delay-1">
                     <h4 class="text-[10px] font-bold text-minimal-silver mb-8 uppercase tracking-[0.25em]">ΣΤΟΙΧΕΙΑ ΕΠΙΚΟΙΝΩΝΙΑΣ</h4>
-                    <ul class="space-y-6 text-white/90">
+                    <ul class="space-y-6 text-minimal-gray">
                         <li class="flex items-start gap-4">
                             <i data-lucide="map-pin" class="w-5 h-5 text-minimal-silver shrink-0 mt-0.5"></i>
                             <span class="font-light text-sm tracking-wide">Τοσίτσα 22, <br>Εξάρχεια, Αττική</span>
@@ -675,20 +675,20 @@
                         <li class="flex items-start gap-4">
                             <i data-lucide="phone" class="w-5 h-5 text-minimal-silver shrink-0 mt-0.5"></i>
                             <div class="flex flex-col font-light text-sm tracking-wide space-y-1">
-                                <a href="tel:+306986736433" class="hover:text-minimal-silver transition-colors">698 673 6433</a>
-                                <a href="tel:+302111198562" class="hover:text-minimal-silver transition-colors">211 1198562</a>
+                                <a href="tel:+306986736433" class="hover:text-minimal-black transition-colors">698 673 6433</a>
+                                <a href="tel:+302111198562" class="hover:text-minimal-black transition-colors">211 1198562</a>
                             </div>
                         </li>
                         <li class="flex items-center gap-4">
                             <i data-lucide="mail" class="w-5 h-5 text-minimal-silver shrink-0"></i>
-                            <a href="mailto:mariamatoula80@yahoo.it" class="hover:text-minimal-silver transition-colors font-light text-sm tracking-wide">mariamatoula80@yahoo.it</a>
+                            <a href="mailto:mariamatoula80@yahoo.it" class="hover:text-minimal-black transition-colors font-light text-sm tracking-wide">mariamatoula80@yahoo.it</a>
                         </li>
                     </ul>
                 </div>
 
                 <div class="reveal reveal-delay-2">
                     <h4 class="text-[10px] font-bold text-minimal-silver mb-8 uppercase tracking-[0.25em]">ΩΡΑΡΙΟ ΛΕΙΤΟΥΡΓΙΑΣ</h4>
-                    <ul class="space-y-4 text-white/90">
+                    <ul class="space-y-4 text-minimal-gray">
                         <li class="flex items-center gap-4">
                             <i data-lucide="clock" class="w-5 h-5 text-minimal-silver shrink-0"></i>
                             <span class="font-light text-sm tracking-widest uppercase">ΔΕΥΤΕΡΑ - ΣΑΒΒΑΤΟ</span>
@@ -700,9 +700,9 @@
             </div>
 
             <div class="flex flex-col md:flex-row justify-between items-center gap-4 reveal">
-                <p class="text-minimal-silver text-xs tracking-wide font-light">© 2026 Μαρία Ματούλα - Κλινική Ψυχολόγος. All rights reserved.</p>
-                <p class="text-minimal-silver text-xs tracking-wide font-light uppercase">
-                    Designed by <a href="https://advonmedia.com" target="_blank" rel="noopener" class="text-white font-bold hover:text-minimal-silver transition-colors">Advon Media</a>
+                <p class="text-minimal-gray text-xs tracking-wide font-light">© 2026 Μαρία Ματούλα - Κλινική Ψυχολόγος. All rights reserved.</p>
+                <p class="text-minimal-gray text-xs tracking-wide font-light uppercase">
+                    Designed by <a href="https://advonmedia.com" target="_blank" rel="noopener" class="text-minimal-black font-bold hover:text-minimal-silver transition-colors">Advon Media</a>
                 </p>
             </div>
         </div>
@@ -736,12 +736,12 @@
                 navbar.classList.add('py-3');
                 navbar.classList.remove('py-6');
                 navbar.querySelector('.glass-panel').classList.add('bg-white/98', 'border-minimal-light/50');
-                navbar.querySelector('.glass-panel').classList.remove('bg-white/85', 'border-white');
+                navbar.querySelector('.glass-panel').classList.remove('bg-white/90', 'border-white');
             } else {
                 navbar.classList.add('py-6');
                 navbar.classList.remove('py-3');
                 navbar.querySelector('.glass-panel').classList.remove('bg-white/98', 'border-minimal-light/50');
-                navbar.querySelector('.glass-panel').classList.add('bg-white/85', 'border-white');
+                navbar.querySelector('.glass-panel').classList.add('bg-white/90', 'border-white');
             }
         });
 
